@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book Register</title>
+</head>
+<body>
+    <h3>アドレス帳登録フォーム</h3>
+    <form th:action="@{/view/form}" method="post" th:object="${addressBook}">
+        <div>
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" th:field="*{name}" required>
+        </div>
+        <div>
+            <label for="phone">電話番号:</label>
+            <input type="tel" id="phone" name="phone" th:field="*{phone}" required>
+        </div>
+        <div>
+            <label for="mailAddress">メールアドレス:</label>
+            <input type="mailAddress" id="mailAddress" name="mailAddress" th:field="*{mailAddress}" required>
+        </div>
+        <button type="submit">登録</button>
+    </form>
+    <p></p>
+    <a href="/">戻る</a>
+</body>
+</html>

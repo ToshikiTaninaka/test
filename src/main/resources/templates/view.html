@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>一覧ページ</title>
+<body>
+		<h3>登録されたアドレス一覧</h3>
+		
+	<div th:if="${addressList!=null and !addressList.empty}">
+		<table class="table table-striped">
+			<thead>
+				<th>名前</th>
+				<th>メールアドレス</th>
+				<th>電話番号</th>
+				<th role="action"></th>
+			</thead>
+			<tbody>
+					<td th:text="*{name}"></td>
+					<td th:text="*{mailAddress}"></td>
+					<td th:text="*{phone}"></td>
+				
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
